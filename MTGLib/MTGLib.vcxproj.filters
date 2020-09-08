@@ -21,6 +21,15 @@
     <Filter Include="ソース ファイル\GameObject">
       <UniqueIdentifier>{bcc99495-4cb3-484b-9c78-b14eef9d8ab3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\GameBasicSystem\Graphic">
+      <UniqueIdentifier>{143b5481-e66a-4374-874c-49e9a902505b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameBasicSystem\Graphic\Asset">
+      <UniqueIdentifier>{3ac2dc2c-3d46-4101-a49e-6cfda2de5457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameBasicSystem\Graphic\AssetHolder">
+      <UniqueIdentifier>{cc679880-5fab-4348-81e0-112032438a7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,9 +44,6 @@
     <ClCompile Include="GameWindow.cpp">
       <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClCompile>
-    <ClCompile Include="GameBasicSystem.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
-    </ClCompile>
     <ClCompile Include="TimePiece.cpp">
       <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClCompile>
@@ -47,9 +53,6 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>ソース ファイル\GameBasicSystem\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="GraphicRenderingExecuter.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
-    </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>ソース ファイル\Component</Filter>
     </ClCompile>
@@ -58,6 +61,21 @@
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>ソース ファイル\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicRenderingExecuter.cpp">
+      <Filter>ソース ファイル\GameBasicSystem\Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshHolder.cpp">
+      <Filter>ソース ファイル\GameBasicSystem\Graphic\AssetHolder</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ソース ファイル\GameBasicSystem\Graphic\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderedSingleton.cpp">
+      <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,9 +103,6 @@
     <ClInclude Include="GameWindow.h">
       <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClInclude>
-    <ClInclude Include="GameBasicSystem.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
-    </ClInclude>
     <ClInclude Include="TimePiece.h">
       <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClInclude>
@@ -106,9 +121,6 @@
     <ClInclude Include="DeltaTimerUpdater.h">
       <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClInclude>
-    <ClInclude Include="GraphicRenderingExecuter.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
-    </ClInclude>
     <ClInclude Include="MyMath.h" />
     <ClInclude Include="Transform.h">
       <Filter>ソース ファイル\Component</Filter>
@@ -118,6 +130,26 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="GraphicRenderingExecuter.h">
+      <Filter>ソース ファイル\GameBasicSystem\Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshHolder.h">
+      <Filter>ソース ファイル\GameBasicSystem\Graphic\AssetHolder</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRenderer.h">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentEssential.h">
+      <Filter>ソース ファイル\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererHolder.h" />
+    <ClInclude Include="OrderedSingleton.h">
+      <Filter>ソース ファイル\GameBasicSystem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

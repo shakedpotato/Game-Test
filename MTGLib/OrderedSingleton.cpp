@@ -10,7 +10,7 @@
 // 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 #include <vector>
 
 
@@ -20,7 +20,7 @@
 //
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
-std::list<GameBasicSystemFinalizer::FinalizerFunc> GameBasicSystemFinalizer::m_Finalizers;
+std::list<OrderedSingletonFinalizer::FinalizerFunc> OrderedSingletonFinalizer::m_Finalizers;
 
 /* ----- GameSystemFinalizer::AddFinalizer ------------------------------------------- */
 /* 概要  : GameSystem型の自身を殺す関数を登録する。                                    */
@@ -28,7 +28,7 @@ std::list<GameBasicSystemFinalizer::FinalizerFunc> GameBasicSystemFinalizer::m_F
 /* 戻り値: なし                                                                        */
 /* 引数0 : FinalizerFunc 自身を殺す関数                                                */
 /* ----------------------------------------------------------------------------------- */
-void GameBasicSystemFinalizer::AddFinalizer(FinalizerFunc func)
+void OrderedSingletonFinalizer::AddFinalizer(FinalizerFunc func)
 {
 	m_Finalizers.push_back(func);
 }
@@ -37,7 +37,7 @@ void GameBasicSystemFinalizer::AddFinalizer(FinalizerFunc func)
 /* 概要  :タイマーのリセット                                                           */
 /* 戻り値: なし                                                                        */
 /* ----------------------------------------------------------------------------------- */
-void GameBasicSystemFinalizer::FinalizeAll(void)
+void OrderedSingletonFinalizer::FinalizeAll(void)
 {
 	// 登録された順と逆順で終了処理を行う
 	auto itr = m_Finalizers.end();

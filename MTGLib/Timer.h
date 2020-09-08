@@ -1,5 +1,5 @@
 #pragma once
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 #include "TimePiece.h"
 
 class DeltaTimerUpdater;
@@ -7,7 +7,7 @@ class DeltaTimerUpdater;
 class DeltaTimer
 {
 private:
-	friend class GameBasicSystemObject<DeltaTimer>;
+	friend class OrderedSingleton<DeltaTimer>;
 	friend class DeltaTimerUpdater;
 	DeltaTimer()
 		:
@@ -29,8 +29,8 @@ private:
 	// フレーム間の経過時間の更新
 	void Update() // これをpublicにしたくない
 	{
-		double curr = GameBasicSystemObject<TimePiece>::Instance()->GetTime();
-		m_DeltaTime = curr - GameBasicSystemObject<DeltaTimer>::Instance()->m_LastElapsedTime;
+		double curr = OrderedSingleton<TimePiece>::Instance()->GetTime();
+		m_DeltaTime = curr - OrderedSingleton<DeltaTimer>::Instance()->m_LastElapsedTime;
 		m_LastElapsedTime = curr;
 	}
 };

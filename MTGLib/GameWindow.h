@@ -1,6 +1,6 @@
 #pragma once
 #include "CommonWinApp.h"
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 // 
@@ -13,7 +13,7 @@
 class GameWindow final
 {
 private:
-	friend class GameBasicSystemObject<GameWindow>;
+	friend class OrderedSingleton<GameWindow>;
 	GameWindow();
 public:
 	~GameWindow();

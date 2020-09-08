@@ -1,5 +1,5 @@
 #pragma once
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 
 #include <vector>
 #include <memory>
@@ -10,7 +10,7 @@ class SceneManager final
 {
 private:
 	SceneManager();
-	friend class GameBasicSystemObject<SceneManager>;
+	friend class OrderedSingleton<SceneManager>;
 	~SceneManager();
 
 private:

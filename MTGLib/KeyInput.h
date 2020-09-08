@@ -1,10 +1,10 @@
 #pragma once
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 
 class KeyInput
 {
 private:
-	friend class GameBasicSystemObject<KeyInput>;
+	friend class OrderedSingleton<KeyInput>;
 	KeyInput();
 	~KeyInput();
 public:

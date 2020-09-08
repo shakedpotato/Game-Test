@@ -141,13 +141,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ComponentBase.cpp" />
-    <ClCompile Include="GameBasicSystem.cpp" />
+    <ClCompile Include="OrderedSingleton.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeshHolder.cpp" />
+    <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="MyGame.cpp" />
     <ClCompile Include="GraphicRenderingExecuter.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimePiece.cpp" />
@@ -156,16 +159,22 @@
   <ItemGroup>
     <ClInclude Include="CommonWinApp.h" />
     <ClInclude Include="ComponentBase.h" />
+    <ClInclude Include="ComponentEssential.h" />
     <ClInclude Include="DeltaTimerUpdater.h" />
-    <ClInclude Include="GameBasicSystem.h" />
+    <ClInclude Include="OrderedSingleton.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="MeshHolder.h" />
+    <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="MTG.h" />
     <ClInclude Include="MyGame.h" />
     <ClInclude Include="GraphicRenderingExecuter.h" />
     <ClInclude Include="MyMath.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererHolder.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene_Tmp.h" />

@@ -24,7 +24,7 @@ public:
 class TextureManager final
 {
 private:
-	friend class GameBasicSystemObject<TextureManager>;
+	friend class OrderedSingleton<TextureManager>;
 	TextureManager();
 public:
 	~TextureManager();

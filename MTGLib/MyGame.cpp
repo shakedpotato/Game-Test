@@ -32,9 +32,9 @@
 #define DEFAULT_WINDOW_WIDTH       1024
 #define DEFAULT_WINDOW_HEIGHT      756
 
-using GBSFinalizer = GameBasicSystemFinalizer;
-using DTimer = GameBasicSystemObject<DeltaTimer>;
-using KeyInputObj = GameBasicSystemObject<KeyInput>;
+using GBSFinalizer = OrderedSingletonFinalizer;
+using DTimer = OrderedSingleton<DeltaTimer>;
+using KeyInputObj = OrderedSingleton<KeyInput>;
 // using RendererObj = GameBasicSystemObject < Renderer>;
  // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
  //
@@ -78,9 +78,9 @@ int MyGame::Main()
 		}
 		else
 		{
-			GameBasicSystemObject<TimePiece>::Instance()->Update();
+			OrderedSingleton<TimePiece>::Instance()->Update();
 			
-			double dt = GameBasicSystemObject<TimePiece>::Instance()->GetDeltaTime();
+			double dt = OrderedSingleton<TimePiece>::Instance()->GetDeltaTime();
 
 			m_TimeCount += dt;
 
@@ -106,26 +106,26 @@ int MyGame::Main()
 
 void MyGame::Init()
 {
-	GameBasicSystemObject<GameWindow>::Instance()->Open( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT,
+	OrderedSingleton<GameWindow>::Instance()->Open( DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT,
 													   GetHInstance(), 
 													   DEFAULT_CLASS_NAME, 
 													   DEFAULT_WINDOW_CAPTION,
 													   DEFAULT_WINDOW_STYLE, 
 													   GetCmdShow() );
 	
-	GameBasicSystemObject<TimePiece>::Instance()->Start();
-	GameBasicSystemObject<KeyInput>::Instance();
-	GameBasicSystemObject<GraphicRenderingExecuter>::Instance()->Init();
-	GameBasicSystemObject<SceneManager>::Instance()->Init();
-	GameBasicSystemObject<TextureManager>::Instance();
+	OrderedSingleton<TimePiece>::Instance()->Start();
+	OrderedSingleton<KeyInput>::Instance();
+	OrderedSingleton<GraphicRenderingExecuter>::Instance()->Init();
+	OrderedSingleton<SceneManager>::Instance()->Init();
+	OrderedSingleton<TextureManager>::Instance();
 }
 
 void MyGame::Update()
 {
-	GameBasicSystemObject<DeltaTimerUpdater>::Instance()->UpdateTimer();
+	OrderedSingleton<DeltaTimerUpdater>::Instance()->UpdateTimer();
 	SetFpsOnCaption();
-	GameBasicSystemObject<KeyInput>::Instance()->Update();
-	GameBasicSystemObject<SceneManager>::Instance()->UpdateScenes();
+	OrderedSingleton<KeyInput>::Instance()->Update();
+	OrderedSingleton<SceneManager>::Instance()->UpdateScenes();
 }
 
 void MyGame::Render()
@@ -135,7 +135,7 @@ void MyGame::Render()
 
 void MyGame::Finalize()
 {
-	GameBasicSystemFinalizer::FinalizeAll();
+	OrderedSingletonFinalizer::FinalizeAll();
 }
 
 void MyGame::SetFpsOnCaption( void )
@@ -146,5 +146,5 @@ void MyGame::SetFpsOnCaption( void )
 	 char text[ 256 ];
 	 sprintf_s( text, 256, "fps = %.3lf", fps );
 	 
-	 GameBasicSystemObject<GameWindow>::Instance()->SetCaption( text );
+	 OrderedSingleton<GameWindow>::Instance()->SetCaption( text );
 }

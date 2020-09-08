@@ -12,7 +12,7 @@
 #define _TIME_PIECE_H_
 #pragma once
 
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 // 
@@ -26,7 +26,7 @@ class TimePiece
 		以下,時間はクロックの累積を示す.
 	--------------------- */
 private:
-	friend class GameBasicSystemObject<TimePiece>;
+	friend class OrderedSingleton<TimePiece>;
 	TimePiece();
 public:
 	void Reset( void );                            // システムタイマーのリセット

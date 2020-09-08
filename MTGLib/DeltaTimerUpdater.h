@@ -5,12 +5,12 @@
 class DeltaTimerUpdater
 {
 private:
-	friend class GameBasicSystemObject<DeltaTimerUpdater>;
+	friend class OrderedSingleton<DeltaTimerUpdater>;
 	DeltaTimerUpdater() {}
 
 public:
 	void UpdateTimer()
 	{
-		GameBasicSystemObject<DeltaTimer>::Instance()->Update();
+		OrderedSingleton<DeltaTimer>::Instance()->Update();
 	}
 };

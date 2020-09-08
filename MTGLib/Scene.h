@@ -2,7 +2,7 @@
 #include <list>
 #include <map>
 #include <memory>
-#include "GameBasicSystem.h"
+#include "OrderedSingleton.h"
 #include "Timer.h"
 #include "ComponentBase.h"
 #include "GameObject.h"
@@ -67,7 +67,7 @@ public:
 		if (isEnableUpdate_)
 			return;
 		
-		float dt = GameBasicSystemObject<DeltaTimer>::Instance()->deltaTime();
+		float dt = OrderedSingleton<DeltaTimer>::Instance()->deltaTime();
 
 		for (auto obj : m_GameObjects)
 		{

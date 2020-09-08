@@ -17,7 +17,7 @@ SceneManager::~SceneManager()
 
 void SceneManager::Init(void)
 {
-	m_Renderer = GameBasicSystemObject<GraphicRenderingExecuter>::Instance();
+	m_Renderer = OrderedSingleton<GraphicRenderingExecuter>::Instance();
 
 	// m_UndestroyableScene = std::make_shared<Scene>();
 	AddSceneA<Scene_Tmp>("Tmp scene");

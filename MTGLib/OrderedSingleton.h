@@ -32,7 +32,7 @@
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 
-class GameBasicSystemFinalizer
+class OrderedSingletonFinalizer
 {
 public:
 	typedef void(*FinalizerFunc)();
@@ -58,7 +58,7 @@ private:
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 
 template <typename T>
-class GameBasicSystemObject final
+class OrderedSingleton final
 {
 private:
 	static std::once_flag m_InitFlag;
@@ -71,9 +71,9 @@ public:
 		return m_Instance;
 	}
 private:
-	GameBasicSystemObject() {};
+	OrderedSingleton() {};
 public:
-	~GameBasicSystemObject()
+	~OrderedSingleton()
 	{
 		// GameBasicSystemFinalizer::RemoveFinalizer(&GameSystemObject<T>::Destroy);
 	}
@@ -88,23 +88,23 @@ public:
 private:
 	static void Init(void)
 	{
-		MyOutputDebugString(_T("GameBasicSystemObject::Init(). Class name = %s\n"), typeid(m_Instance).name());
+		MyOutputDebugString(_T("OrderedSingleton::Init(). Class name = %s\n"), typeid(m_Instance).name());
 		m_Instance = new T;
 
 		assert(m_Instance);
 
-		GameBasicSystemFinalizer::AddFinalizer(&GameBasicSystemObject<T>::Destroy);
+		OrderedSingletonFinalizer::AddFinalizer(&OrderedSingleton<T>::Destroy);
 	}
 
 	static void Destroy(void)
 	{
-		MyOutputDebugString(_T("GameBasicSystemObject::Destroy(). Class name = %s\n"), typeid(m_Instance).name());
+		MyOutputDebugString(_T("OrderedSingleton::Destroy(). Class name = %s\n"), typeid(m_Instance).name());
 		delete m_Instance;
 		m_Instance = nullptr;
 	}
 };
 
-template <typename T> std::once_flag GameBasicSystemObject<T>::m_InitFlag;
-template <typename T> T* GameBasicSystemObject<T>::m_Instance = nullptr;
+template <typename T> std::once_flag OrderedSingleton<T>::m_InitFlag;
+template <typename T> T* OrderedSingleton<T>::m_Instance = nullptr;
 
 #endif // _GAME_SYSTEM_H_
