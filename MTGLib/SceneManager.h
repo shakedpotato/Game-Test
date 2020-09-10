@@ -14,7 +14,6 @@ private:
 	~SceneManager();
 
 private:
-	GraphicRenderingExecuter*	m_Renderer;
 	std::vector<std::shared_ptr<Scene>>	m_Scenes;
 	// std::shared_ptr<Scene> m_UndestroyableScene;
 public:

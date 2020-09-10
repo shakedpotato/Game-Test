@@ -184,6 +184,13 @@ void Transform::SetLocalPosition(Vector3 pos)
 	m_LocalPosition = pos;
 }
 
+void Transform::SetLocalPosition(float x, float y, float z)
+{
+	m_LocalPosition.x = x;
+	m_LocalPosition.y = y;
+	m_LocalPosition.z = z;
+}
+
 void Transform::SetLocalRotation(Vector3 rot)
 {
 	m_LocalRotation = rot;
@@ -192,4 +199,11 @@ void Transform::SetLocalRotation(Vector3 rot)
 void Transform::SetLocalScale(Vector3 scale)
 {
 	m_LocalScale = scale;
+}
+
+void Transform::AddLocalPosition(Vector3 v)
+{
+	m_LocalPosition.x += v.x;
+	m_LocalPosition.y += v.y;
+	m_LocalPosition.z += v.z;
 }

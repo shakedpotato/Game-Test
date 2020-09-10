@@ -21,6 +21,7 @@ struct VS_OUT
 void main( in VS_IN vi, out VS_OUT vo ) 
 {	
 	vo.pos = mul(vi.pos, WVP);
+    vo.nmlw = mul(vi.nml, WVP);
 	vo.uv = vi.uv;
 	
 }

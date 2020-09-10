@@ -2,7 +2,7 @@
 #include <memory>
 #include <unordered_map>
 #include "CommonWinApp.h"
-#include "GraphicRenderingExecuter.h"
+#include "DX11Executor.h"
 
 
 class Texture

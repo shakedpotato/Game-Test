@@ -64,7 +64,7 @@ public:
 
 	virtual void Update(void)
 	{
-		if (isEnableUpdate_)
+		if (!isEnableUpdate_)
 			return;
 		
 		float dt = OrderedSingleton<DeltaTimer>::Instance()->deltaTime();

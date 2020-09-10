@@ -1,13 +1,13 @@
 #include "GameWindow.h"
 #include "Texture.h"
-#include "GraphicRenderingExecuter.h"
+#include "DX11Executor.h"
 
-GraphicRenderingExecuter::GraphicRenderingExecuter()
+DX11Executor::DX11Executor()
 {
 
 }
 
-GraphicRenderingExecuter::~GraphicRenderingExecuter()
+DX11Executor::~DX11Executor()
 {
 		// オブジェクト解放
 	if (m_ImmediateContext)	m_ImmediateContext->ClearState();
@@ -17,13 +17,13 @@ GraphicRenderingExecuter::~GraphicRenderingExecuter()
 	if (m_D3DDevice)			m_D3DDevice->Release();
 }
 
-void GraphicRenderingExecuter::Init()
+void DX11Executor::Init()
 {
 	HRESULT hr = S_OK;
 
-	unsigned int width = GameBasicSystemObject<GameWindow>::Instance()->Width();
-	unsigned int height = GameBasicSystemObject<GameWindow>::Instance()->Height();
-	HWND hWnd = GameBasicSystemObject<GameWindow>::Instance()->HWND();
+	unsigned int width = OrderedSingleton<GameWindow>::Instance()->Width();
+	unsigned int height = OrderedSingleton<GameWindow>::Instance()->Height();
+	HWND hWnd = OrderedSingleton<GameWindow>::Instance()->HWND();
 
 	// デバイス、スワップチェーン、コンテキスト生成
 	DXGI_SWAP_CHAIN_DESC sd;
@@ -58,6 +58,7 @@ void GraphicRenderingExecuter::Init()
 		// レンダーターゲットビュー生成、設定 // ここ複数化の余地あり
 		ID3D11Texture2D* pBackBuffer = NULL;
 		m_SwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (LPVOID*)&pBackBuffer);
+		assert(pBackBuffer);
 		m_D3DDevice->CreateRenderTargetView(pBackBuffer, NULL, &m_FinalRenderTargetView);
 		pBackBuffer->Release();
 
@@ -78,6 +79,7 @@ void GraphicRenderingExecuter::Init()
 		td.CPUAccessFlags = 0;
 		td.MiscFlags = 0;
 		m_D3DDevice->CreateTexture2D(&td, NULL, &depthTexture);
+		assert(depthTexture);
 
 		//ステンシルターゲット作成
 		D3D11_DEPTH_STENCIL_VIEW_DESC dsvd;
@@ -181,27 +183,27 @@ void GraphicRenderingExecuter::Init()
 
 }
 
-void GraphicRenderingExecuter::Begin()
+void DX11Executor::Begin()
 {
-	MyOutputDebugString(_T("GraphicRenderExecuter::Begin()\n"));
+	MyOutputDebugString(_T("DX11Renderer::Begin()\n"));
 	// バックバッファクリア
-	float ClearColor[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	float ClearColor[4] = { 0.0f, 0.5f, 0.5f, 1.0f };
 	m_ImmediateContext->ClearRenderTargetView(m_FinalRenderTargetView, ClearColor);
 	m_ImmediateContext->ClearDepthStencilView(m_FinalDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 }
 
 
 
-void GraphicRenderingExecuter::End()
+void DX11Executor::End()
 {
-	MyOutputDebugString(_T("GraphicRenderExecuter::End()\n"));
+	MyOutputDebugString(_T("DX11Renderer::End()\n"));
 	m_SwapChain->Present(1, 0);
 }
 
 
 
 
-void GraphicRenderingExecuter::SetDepthEnable(bool Enable)
+void DX11Executor::SetDepthEnable(bool Enable)
 {
 	if (Enable)
 		m_ImmediateContext->OMSetDepthStencilState(m_DepthStateEnable, NULL);
@@ -209,10 +211,9 @@ void GraphicRenderingExecuter::SetDepthEnable(bool Enable)
 		m_ImmediateContext->OMSetDepthStencilState(m_DepthStateDisable, NULL);
 }
 
-template<typename VertexInfoTypeT>
-void GraphicRenderingExecuter::SetVertexBuffers(ID3D11Buffer* VertexBuffer)
+void DX11Executor::SetVertexBuffers(ID3D11Buffer* VertexBuffer)
 {
-	UINT stride = sizeof(VertexInfoTypeT);
+	UINT stride = sizeof(Vertex3D);
 	UINT offset = 0;
 	ID3D11Buffer* vb[1] = { VertexBuffer };
 	m_ImmediateContext->IASetVertexBuffers(0, 1, vb, &stride, &offset);
@@ -220,20 +221,25 @@ void GraphicRenderingExecuter::SetVertexBuffers(ID3D11Buffer* VertexBuffer)
 
 
 
-void GraphicRenderingExecuter::SetIndexBuffer(ID3D11Buffer* IndexBuffer)
+void DX11Executor::SetIndexBuffer(ID3D11Buffer* IndexBuffer)
 {
 	m_ImmediateContext->IASetIndexBuffer(IndexBuffer, DXGI_FORMAT_R16_UINT, 0);
 }
 
 
-void GraphicRenderingExecuter::SetTexture(Texture* Texture)
+void DX11Executor::SetTexture(Texture* Texture)
 {
 	ID3D11ShaderResourceView* srv[1] = { Texture->GetShaderResourceView() };
 	m_ImmediateContext->PSSetShaderResources(0, 1, srv);
 }
 
+void DX11Executor::SetSetShaderResourceView(ID3D11ShaderResourceView* srv)
+{
+	ID3D11ShaderResourceView* s[1] = { srv };
+	m_ImmediateContext->PSSetShaderResources(0, 1, s);
+}
 
-void GraphicRenderingExecuter::DrawIndexed(unsigned int IndexCount, unsigned int StartIndexLocation, int BaseVertexLocation)
+void DX11Executor::DrawIndexed(unsigned int IndexCount, unsigned int StartIndexLocation, int BaseVertexLocation)
 {
 
 	m_ImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);

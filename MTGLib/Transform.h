@@ -42,7 +42,10 @@ public:
 	void SetRotationLookAt( const MyMath::Vector3& target, const MyMath::Vector3& upVector = MyMath::Vector3::Up());
 	void SetRotationQ(MyMath::Vector4& vec) { m_LocalQuaternion = vec; }
 	void SetLocalPosition( MyMath::Vector3 pos );
+	void SetLocalPosition(float x, float y, float z);
 	void SetLocalRotation( MyMath::Vector3 rot );
 	void SetLocalScale( MyMath::Vector3 scale );
+
+	void AddLocalPosition(MyMath::Vector3 v);
 };
 

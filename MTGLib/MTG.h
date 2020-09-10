@@ -1,19 +1,20 @@
 #pragma once
 
+#include "OrderedSingleton.h"
 #include "Timer.h"
 
 namespace MTG
 {
 	struct Timer
 	{
-		static float deltaTime()
+		static float GetDeltaTime()
 		{
-			return GameBasicSystemObject<DeltaTimer>::Instance()->deltaTime();
+			return OrderedSingleton<DeltaTimer>::Instance()->deltaTime();
 		}
 
-		static double deltaTimed()
+		static double GetDeltaTimed()
 		{
-			return GameBasicSystemObject<DeltaTimer>::Instance()->deltaTimed();
+			return OrderedSingleton<DeltaTimer>::Instance()->deltaTimed();
 		}
 	};
 }

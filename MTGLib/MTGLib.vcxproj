@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ComponentBase.cpp" />
     <ClCompile Include="OrderedSingleton.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -149,14 +150,18 @@
     <ClCompile Include="MeshHolder.cpp" />
     <ClCompile Include="MeshRenderer.cpp" />
     <ClCompile Include="MyGame.cpp" />
-    <ClCompile Include="GraphicRenderingExecuter.cpp" />
+    <ClCompile Include="DX11Executor.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="RenderingExecuter.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Shader3D.cpp" />
+    <ClCompile Include="ShaderHolder.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TimePiece.cpp" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="CommonWinApp.h" />
     <ClInclude Include="ComponentBase.h" />
     <ClInclude Include="ComponentEssential.h" />
@@ -170,19 +175,32 @@
     <ClInclude Include="MeshRenderer.h" />
     <ClInclude Include="MTG.h" />
     <ClInclude Include="MyGame.h" />
-    <ClInclude Include="GraphicRenderingExecuter.h" />
+    <ClInclude Include="DX11Executor.h" />
     <ClInclude Include="MyMath.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="RendererHolder.h" />
+    <ClInclude Include="RenderingExecuter.h" />
+    <ClInclude Include="Holders.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene_Tmp.h" />
+    <ClInclude Include="Shader3D.h" />
+    <ClInclude Include="ShaderHolder.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TimePiece.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TmpComponent.h" />
     <ClInclude Include="Transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="data\SHADER\PixelShader3D.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).cso</ObjectFileOutput>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="data\SHADER\VertexShader3D.hlsl">
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).cso</ObjectFileOutput>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

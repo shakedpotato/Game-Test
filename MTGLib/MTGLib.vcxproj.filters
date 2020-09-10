@@ -9,26 +9,32 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\Component">
-      <UniqueIdentifier>{dbfc3fd0-844f-451f-bfe2-7c731eeecd40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameBasicSystem">
-      <UniqueIdentifier>{21c8f52c-efd3-4718-92a0-9047357e7c1a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\GameBasicSystem\Scene">
-      <UniqueIdentifier>{b94b8b4a-ad32-4af1-a2da-dd8615ee1fbf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\GameObject">
       <UniqueIdentifier>{bcc99495-4cb3-484b-9c78-b14eef9d8ab3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameBasicSystem\Graphic">
-      <UniqueIdentifier>{143b5481-e66a-4374-874c-49e9a902505b}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\GraphicalRenderer">
+      <UniqueIdentifier>{0e76a8ed-d22f-4a53-b911-bffc359c9931}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameBasicSystem\Graphic\Asset">
-      <UniqueIdentifier>{3ac2dc2c-3d46-4101-a49e-6cfda2de5457}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\GraphicalRenderer\OrderedSingleton">
+      <UniqueIdentifier>{f87fece2-00e5-47ac-9e6a-cf2be4824c10}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\GameBasicSystem\Graphic\AssetHolder">
-      <UniqueIdentifier>{cc679880-5fab-4348-81e0-112032438a7b}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\Other">
+      <UniqueIdentifier>{b42686e2-47dd-4624-aa28-3156d754e2ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\OrderedSingleton">
+      <UniqueIdentifier>{21c8f52c-efd3-4718-92a0-9047357e7c1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Other\Component">
+      <UniqueIdentifier>{dbfc3fd0-844f-451f-bfe2-7c731eeecd40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\BaseClasses">
+      <UniqueIdentifier>{bc7825b0-fc7c-44e3-b7f5-dc1904ddb64d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{b94b8b4a-ad32-4af1-a2da-dd8615ee1fbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder">
+      <UniqueIdentifier>{72de06bc-18d0-45c3-b93c-c72230c5dc81}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,44 +44,56 @@
     <ClCompile Include="MyGame.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ComponentBase.cpp">
-      <Filter>ソース ファイル\Component</Filter>
-    </ClCompile>
     <ClCompile Include="GameWindow.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClCompile>
     <ClCompile Include="TimePiece.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClCompile>
     <ClCompile Include="KeyInput.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
-      <Filter>ソース ファイル\GameBasicSystem\Scene</Filter>
+      <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル\Other\Component</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>ソース ファイル\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
-      <Filter>ソース ファイル\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphicRenderingExecuter.cpp">
-      <Filter>ソース ファイル\GameBasicSystem\Graphic</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshHolder.cpp">
-      <Filter>ソース ファイル\GameBasicSystem\Graphic\AssetHolder</Filter>
+      <Filter>ソース ファイル\Other\Component</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
-      <Filter>ソース ファイル\GameBasicSystem\Graphic\Asset</Filter>
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
     </ClCompile>
     <ClCompile Include="MeshRenderer.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderingExecuter.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentBase.cpp">
+      <Filter>ソース ファイル\BaseClasses</Filter>
     </ClCompile>
     <ClCompile Include="OrderedSingleton.cpp">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\BaseClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Executor.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshHolder.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderHolder.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader3D.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,62 +112,88 @@
     <ClInclude Include="MTG.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ComponentBase.h">
-      <Filter>ソース ファイル\Component</Filter>
-    </ClInclude>
     <ClInclude Include="TmpComponent.h">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル\Other\Component</Filter>
     </ClInclude>
     <ClInclude Include="GameWindow.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
     <ClInclude Include="TimePiece.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
     <ClInclude Include="KeyInput.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
-      <Filter>ソース ファイル\GameBasicSystem\Scene</Filter>
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>ソース ファイル\GameBasicSystem\Scene</Filter>
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="DeltaTimerUpdater.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
-    <ClInclude Include="MyMath.h" />
     <ClInclude Include="Transform.h">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル\Other\Component</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>ソース ファイル\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>ソース ファイル\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="GraphicRenderingExecuter.h">
-      <Filter>ソース ファイル\GameBasicSystem\Graphic</Filter>
-    </ClInclude>
-    <ClInclude Include="MeshHolder.h">
-      <Filter>ソース ファイル\GameBasicSystem\Graphic\AssetHolder</Filter>
-    </ClInclude>
-    <ClInclude Include="MeshRenderer.h">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル\Other\Component</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRenderer.h">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderingExecuter.h">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentBase.h">
+      <Filter>ソース ファイル\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="ComponentEssential.h">
-      <Filter>ソース ファイル\Component</Filter>
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="RendererHolder.h" />
     <ClInclude Include="OrderedSingleton.h">
-      <Filter>ソース ファイル\GameBasicSystem</Filter>
+      <Filter>ソース ファイル\BaseClasses</Filter>
     </ClInclude>
+    <ClInclude Include="DX11Executor.h">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshHolder.h">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader3D.h">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderHolder.h">
+      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMath.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Holders.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="data\SHADER\PixelShader3D.hlsl">
+      <Filter>ソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="data\SHADER\VertexShader3D.hlsl">
+      <Filter>ソース ファイル</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

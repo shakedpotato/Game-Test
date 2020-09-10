@@ -15,9 +15,9 @@
 #include "DeltaTimerUpdater.h"
 #include "GameWindow.h"
 #include "KeyInput.h"
-#include "GraphicRenderingExecuter.h"
 #include "Texture.h"
 #include "SceneManager.h"
+#include "RenderingExecuter.h"
 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 // 
@@ -115,9 +115,10 @@ void MyGame::Init()
 	
 	OrderedSingleton<TimePiece>::Instance()->Start();
 	OrderedSingleton<KeyInput>::Instance();
-	OrderedSingleton<GraphicRenderingExecuter>::Instance()->Init();
-	OrderedSingleton<SceneManager>::Instance()->Init();
 	OrderedSingleton<TextureManager>::Instance();
+	OrderedSingleton<RenderingExecuter>::Instance();
+	
+	OrderedSingleton<SceneManager>::Instance()->Init();
 }
 
 void MyGame::Update()
@@ -131,6 +132,7 @@ void MyGame::Update()
 void MyGame::Render()
 {
 	// GameBasicSystemObject<Manager>::GetInstance()->Draw();
+	OrderedSingleton<RenderingExecuter>::Instance()->RenderAll();
 }
 
 void MyGame::Finalize()

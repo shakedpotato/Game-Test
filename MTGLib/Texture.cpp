@@ -1,5 +1,5 @@
 #include "OrderedSingleton.h"
-#include "GraphicRenderingExecuter.h"
+#include "DX11Executor.h"
 
 #include "Texture.h"
 
@@ -82,7 +82,7 @@ void Texture::Load(const char* FileName)
 	initData.SysMemPitch = width * 4;
 	initData.SysMemSlicePitch = size;
 
-	auto hr = OrderedSingleton<GraphicRenderingExecuter>::Instance()->GetDevice()->CreateTexture2D(&desc, &initData, &m_Texture);
+	auto hr = OrderedSingleton<DX11Executor>::Instance()->GetDevice()->CreateTexture2D(&desc, &initData, &m_Texture);
 	if (FAILED(hr))
 	{
 		assert(false);
@@ -93,7 +93,7 @@ void Texture::Load(const char* FileName)
 	SRVDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
 	SRVDesc.Texture2D.MipLevels = 1;
 
-	hr = OrderedSingleton<GraphicRenderingExecuter>::Instance()->GetDevice()->CreateShaderResourceView(m_Texture, &SRVDesc, &m_ShaderResourceView);
+	hr = OrderedSingleton<DX11Executor>::Instance()->GetDevice()->CreateShaderResourceView(m_Texture, &SRVDesc, &m_ShaderResourceView);
 	if (FAILED(hr))
 	{
 		assert(false);

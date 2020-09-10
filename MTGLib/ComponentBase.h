@@ -19,7 +19,7 @@ class ComponentBase
 	friend class GameObject;
 	friend class Scene;
 private:
-	// ComponentBase() = delete;
+	//  = delete;
 	ComponentBase( const ComponentBase& ) = delete; // コピーコンストラクタ
 	ComponentBase& operator = ( const ComponentBase& ) = delete; // コピー代入演算子
 	ComponentBase( ComponentBase&& ) = delete; // ムーブコンストラクタ
@@ -29,6 +29,7 @@ private:
 public:
 	tstring Name_;
 public:
+	ComponentBase();
 	ComponentBase(const TCHAR* ComponentBaseName);
 
 	virtual ~ComponentBase();
@@ -42,7 +43,7 @@ public:
 	std::weak_ptr<GameObject> GetGameObject() { return m_pGameObject; }
 
 protected:
-	std::shared_ptr<ComponentBase> GetSharedFromThisComponentBase() { return shared_from_this(); } // いらんくね
+	std::shared_ptr<ComponentBase> GetSharedFromThisComponentBase() { return shared_from_this(); } 
 private:
 
 protected:
