@@ -27,21 +27,42 @@
     <Filter Include="ソース ファイル\Other\Component">
       <UniqueIdentifier>{dbfc3fd0-844f-451f-bfe2-7c731eeecd40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\BaseClasses">
-      <UniqueIdentifier>{bc7825b0-fc7c-44e3-b7f5-dc1904ddb64d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Scene">
       <UniqueIdentifier>{b94b8b4a-ad32-4af1-a2da-dd8615ee1fbf}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder">
       <UniqueIdentifier>{72de06bc-18d0-45c3-b93c-c72230c5dc81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene\Base">
+      <UniqueIdentifier>{20bcbc1e-b9ca-4108-adcc-257f5f0c036a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\OrderedSingleton">
+      <UniqueIdentifier>{bc7825b0-fc7c-44e3-b7f5-dc1904ddb64d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\TMP">
+      <UniqueIdentifier>{29e6537f-76f9-4d5a-8501-a0b430884941}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GraphicalRenderer\Camera">
+      <UniqueIdentifier>{67b73a3c-0d90-4537-adec-b488eff05906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GraphicalRenderer\Renderer">
+      <UniqueIdentifier>{a286ce13-a9a3-4611-8b99-2fbab78de71a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GraphicalRenderer\Renderer\MeshRenderer">
+      <UniqueIdentifier>{41b917e8-40d3-40f4-bd2c-95549ebe7c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GraphicalRenderer\Renderer\Shader">
+      <UniqueIdentifier>{c692ed76-f289-48b3-a4ba-ab96a74d6d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Util">
+      <UniqueIdentifier>{bc13baee-97ec-4c02-8c86-b49477585ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\MyGame">
+      <UniqueIdentifier>{98cae914-ac74-4650-b38f-8b851d7d1ca6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="MyGame.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameWindow.cpp">
@@ -65,23 +86,8 @@
     <ClCompile Include="Texture.cpp">
       <Filter>ソース ファイル\Other\Component</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClCompile>
-    <ClCompile Include="MeshRenderer.cpp">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClCompile>
     <ClCompile Include="RenderingExecuter.cpp">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
-    </ClCompile>
-    <ClCompile Include="ComponentBase.cpp">
-      <Filter>ソース ファイル\BaseClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="OrderedSingleton.cpp">
-      <Filter>ソース ファイル\BaseClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="DX11Executor.cpp">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
@@ -92,23 +98,29 @@
     <ClCompile Include="ShaderHolder.cpp">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
     </ClCompile>
+    <ClCompile Include="ComponentBase.cpp">
+      <Filter>ソース ファイル\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="OrderedSingleton.cpp">
+      <Filter>ソース ファイル\OrderedSingleton</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshRenderer.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\MeshRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\MeshRenderer</Filter>
+    </ClCompile>
     <ClCompile Include="Shader3D.cpp">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGame.cpp">
+      <Filter>ソース ファイル\MyGame</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="CommonWinApp.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="MyGame.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Tmp.h">
-      <Filter>リソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="MTG.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
@@ -130,9 +142,6 @@
     <ClInclude Include="SceneManager.h">
       <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
-      <Filter>ソース ファイル\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="DeltaTimerUpdater.h">
       <Filter>ソース ファイル\Other\OrderedSingleton</Filter>
     </ClInclude>
@@ -145,47 +154,65 @@
     <ClInclude Include="Texture.h">
       <Filter>ソース ファイル\Other\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClInclude>
-    <ClInclude Include="MeshRenderer.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClInclude>
     <ClInclude Include="RenderingExecuter.h">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentBase.h">
-      <Filter>ソース ファイル\BaseClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="ComponentEssential.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="OrderedSingleton.h">
-      <Filter>ソース ファイル\BaseClasses</Filter>
     </ClInclude>
     <ClInclude Include="DX11Executor.h">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClInclude>
     <ClInclude Include="MeshHolder.h">
       <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader3D.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderHolder.h">
-      <Filter>ソース ファイル\GraphicalRenderer</Filter>
     </ClInclude>
     <ClInclude Include="MyMath.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Scene_Tmp.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>ソース ファイル\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentBase.h">
+      <Filter>ソース ファイル\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="OrderedSingleton.h">
+      <Filter>ソース ファイル\OrderedSingleton</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentEssential.h">
+      <Filter>ソース ファイル\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>ソース ファイル\GraphicalRenderer\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderHolder.h">
+      <Filter>ソース ファイル\GraphicalRenderer\OrderedSingleton\Holder</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRenderer.h">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\MeshRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\MeshRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader3D.h">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>ソース ファイル\GraphicalRenderer\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonWinApp.h">
+      <Filter>ソース ファイル\Util</Filter>
+    </ClInclude>
     <ClInclude Include="Holders.h">
+      <Filter>ソース ファイル\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
       <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGame.h">
+      <Filter>ソース ファイル\MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="RecompileShaderTest.h">
+      <Filter>ソース ファイル\TMP</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

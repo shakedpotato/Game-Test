@@ -14,7 +14,7 @@ private:
 	XMMATRIX m_InverseViewMatrix;
 	XMMATRIX m_ProjectionMatrix;
 public:
-	void SetViewPort(LONG left, LONG top, LONG right, LONG bottom);
+	void SetViewPort(LONG left, LONG top, LONG right, LONG bottom); // Ç±ÇÍÇ¢ÇÁÇÒÇ≠ÇÀÅBDX11ExecutorÇ≈Ç‚ÇÈÇ©åàÇﬂÇÈÇ±Ç∆ÅB
 	void PrepareForRendering();
 
 	XMMATRIX& GetViewMatrix() { return m_ViewMatrix; }

@@ -38,8 +38,8 @@ void MeshRenderer::Render(std::weak_ptr<Camera> camera)
 
 
 	// シェーダの設定
-	m_Shader.lock()->SetWorldViewProjMatrix(&wvpf);
-	m_Shader.lock()->Set();
+	m_Shader->SetWorldViewProjMatrix(&wvpf);
+	m_Shader->Set();
 
 	// 描画命令
 	m_Mesh.lock()->Draw();
@@ -50,7 +50,7 @@ void MeshRenderer::SetMeshData(std::weak_ptr<Mesh> mesh)
 	m_Mesh = mesh;
 }
 
-void MeshRenderer::SetShader3D(std::weak_ptr<Shader3D> shader)
+void MeshRenderer::SetShader3D(std::shared_ptr<Shader3D> shader)
 {
 	m_Shader = shader;
 }

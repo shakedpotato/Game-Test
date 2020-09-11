@@ -34,7 +34,7 @@ class Mesh
 {
 public:
 	Mesh() {}
-	~Mesh() {}
+	~Mesh();
 private:
 	ID3D11Buffer* m_VertexBuffer = NULL;
 	ID3D11Buffer* m_IndexBuffer = NULL;

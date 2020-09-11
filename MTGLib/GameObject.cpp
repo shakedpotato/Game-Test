@@ -49,3 +49,11 @@ void GameObject::StartComponents(void)
 
 	m_ComponentsWaitingToStart.clear();
 }
+
+void GameObject::FinalizeComponents(void)
+{
+	for (auto component : m_Components)
+	{
+		component.second->OnDestroy();
+	}
+}

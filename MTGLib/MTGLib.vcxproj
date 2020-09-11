@@ -178,6 +178,7 @@
     <ClInclude Include="DX11Executor.h" />
     <ClInclude Include="MyMath.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="RecompileShaderTest.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderingExecuter.h" />
     <ClInclude Include="Holders.h" />

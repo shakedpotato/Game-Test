@@ -45,7 +45,7 @@ public:
 	{
 		for (auto obj : m_GameObjects)
 		{
-			// obj->Uninit();
+			obj->FinalizeComponents();
 		}
 	}
 
@@ -72,7 +72,6 @@ public:
 		for (auto obj : m_GameObjects)
 		{
 			obj->UpdateComponents(dt);
-			obj->Update();
 		}
 	}
 
@@ -83,7 +82,6 @@ public:
 		
 		m_GameObjects.emplace_back(obj);
 
-		obj->Init();
 		obj->transform = obj->AddComponent<Transform>();
 
 		return m_GameObjects.back();

@@ -13,15 +13,20 @@ class Shader3D
 public:
 	Shader3D() {}
 private:
-	ID3D11VertexShader* m_VertexShader;
-	ID3D11PixelShader*	m_PixelShader;
-	ID3D11InputLayout*	m_VertexLayout;
+	ID3D11VertexShader* m_VertexShader = nullptr;
+	ID3D11PixelShader*	m_PixelShader = nullptr;
+	ID3D11InputLayout*	m_VertexLayout = nullptr;
 
-	ID3D11Buffer*		m_ConstantBuffer; // 毎フレーム変更するマテリアル, 行列, ライト情報などなどを格納する。 
+	ID3D11Buffer*		m_ConstantBuffer = nullptr; // 毎フレーム変更するマテリアル, 行列, ライト情報などなどを格納する。 
 	CONSTANT3D			m_Constant;
 
 public:
 	void Init( const char* VertexShader, const char* PixelShader );
+	void InitWithCompiledFile(const char* VertexShader, const char* PixelShader);
+	void LoadVertexShader(const char* file);
+	void CompileVertexShader(const char* file);
+	void CompilePixelShader(const char* file);
+	void LoadPixelShader(const char* file);
 	void Init(const std::string& vertexShader, const std::string& pixelShader);
 	void Uninit();
 	void Set();

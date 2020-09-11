@@ -44,14 +44,11 @@ public:
 	tstring Name_;
 	std::weak_ptr<Transform> transform;
 public:
-	virtual void Init(void) {}
-	virtual void Update(void) {}
-	virtual void Draw(void) {}
-	virtual void Uninit(void) {}
 
-	virtual void AwakeComponents(void) final;
-	virtual void StartComponents(void) final;
-	virtual void UpdateComponents(const float dt) const final;
+	virtual void AwakeComponents(void) final; // componentがGameObjectが持つcomponentの順番を操作するようなことは想定されていないので注意する。
+	virtual void StartComponents(void) final; // componentがGameObjectが持つcomponentの順番を操作するようなことは想定されていないので注意する。
+	virtual void UpdateComponents(const float dt) const final; 
+	virtual void FinalizeComponents(void) final;
 
 	template<typename T>
 	void AddComponentA() // return std::weak_ptr は C26444 NO_UNNAMED_RAII_OBJECTS

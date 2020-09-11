@@ -38,6 +38,11 @@
 //	}
 //}
 
+Mesh::~Mesh()
+{
+	Unload();
+}
+
 void Mesh::Draw()
 {
 	// Test();
@@ -151,7 +156,6 @@ void Mesh::Unload()
 {
 	m_VertexBuffer->Release();
 	m_IndexBuffer->Release();
-	instanceBuffer->Release();
 
 	for( unsigned short i = 0; i < m_SubsetNum; i++ )
 	{
