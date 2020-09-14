@@ -23,5 +23,6 @@ using namespace DirectX;
 
 #include "MyMath.h"
 
+
 HINSTANCE GetHInstance( void );
 int GetCmdShow( void );

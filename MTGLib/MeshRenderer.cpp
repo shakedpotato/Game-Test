@@ -36,9 +36,13 @@ void MeshRenderer::Render(std::weak_ptr<Camera> camera)
 	XMFLOAT4X4 wvpf;
 	XMStoreFloat4x4(&wvpf, wvp);
 
+	XMFLOAT4X4 worldf;
+	XMStoreFloat4x4(&worldf, world);
+
 
 	// シェーダの設定
 	m_Shader->SetWorldViewProjMatrix(&wvpf);
+	m_Shader->SetWorldMatrix(&worldf);
 	m_Shader->Set();
 
 	// 描画命令
